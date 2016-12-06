@@ -147,13 +147,13 @@ p {
    position: relative;
  }
  header .hero h1 {
-   font-size:48px;
+   font-size:34px;
    font-weight: normal;
    margin:95px 0 0;
  }
  @media (min-width: 320px){
    header .hero h1{
-     font-size: 30px;
+     font-size: 42px;
    }
 
  header .hero p {
