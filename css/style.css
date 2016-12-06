@@ -38,6 +38,9 @@ p {
  .container:after {
    clear: both;
  }
+ .container.dashboard-container {
+	 margin-left: 25%;
+ }
  .one-half, .one-third, .one-fourth {
    width:96%;
    float:left;
@@ -81,6 +84,9 @@ p {
    h1 {
       font-size: 60px;
    }
+	 .container.dashboard-container {
+		 width: 1480px;
+	 }
   }
 
 
@@ -145,6 +151,11 @@ p {
    font-weight: normal;
    margin:95px 0 0;
  }
+ @media (min-width: 320px){
+   header .hero h1{
+     font-size: 30px;
+   }
+
  header .hero p {
    font-size: 22px;
    line-height: 26px;
@@ -160,6 +171,7 @@ p {
 
  /* BUTTONS */
  .btn {
+	display: inline-block;
  	border-radius: 4px;
  	color:#FFFFFF;
  	font-weight:  700;
@@ -202,7 +214,7 @@ p {
    background: #dcd6ca;
    background-size:cover;
    text-align:center
-   padding:4em 0;
+   padding: 4em 0;
 }
 
 .pricing h2, .pricing p {
@@ -281,7 +293,7 @@ p {
 
 /* TESTIMONIALS */
  .testimonials {
-   padding:10em 0;
+   padding: 60px 0;
    text-align: center;
  }
  .testimonials h2 {
@@ -330,16 +342,26 @@ p {
  }
 
 .one-fourth.offset {
-   margin-top: 40px;
+   margin-top: 60px;
 }
 
+/* Call to action */
 
+.call-to-action {
+	text-align: center;
+	background-color: #aeaeae;
+	padding: 60px 0;
+}
+
+.call-to-action p {
+	margin: 30px 0;
+}
 
 /* FOOTER */
  footer {
    background-color: #757c84;
    color: #FFFFFF;
-   height: 100px;
+   min-height: 100px;
    position: relative;
    overflow: hidden;
    z-index: 0;
@@ -358,7 +380,7 @@ p {
    color:#FFFFFF;
    text-decoration: none;
  }
- 
+
  footer .logo{
    padding: 0em 0;
    margin: 0 auto;
@@ -384,15 +406,81 @@ p {
  .dashboard {
    background:#F7F7F7;
  }
+
+.dashboard .btn {
+   position: right;
+   bottom: 20px;
+   left: 20px;
+   right: 20px;
+}
+
+
+
  .left-nav {
-   height: 100vh;
-   width:14.66666667%;
-   color:#FFFFFF;
-   background: #34495E;
-   background-image: linear-gradient(206deg, #5F81A3 0%, #34495E 94%);
-   float:left;
-   position: fixed;
+   height: 100%;
+   width:280px;
+   position:absolute;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(0,280px);
+     -webkit-transform: translate(0,-100%); /** Chrome & Safari **/
+     -o-transform: translate(0,-100%); /** Opera **/
+     -moz-transform: translate(0,-100%); /** Firefox **/
+ }
+ .left-nav.open {
    display:block;
+   width:280px;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(0,0);
+     -webkit-transform: translate(0,0); /** Chrome & Safari **/
+     -o-transform: translate(0,0); /** Opera **/
+     -moz-transform: translate(0,0); /** Firefox **/
+     z-index: 100;
+ }  
+ .hamburger {
+   position:absolute;
+   z-index: 1000;
+   background:#34495E;
+   color:#FFF;
+   text-decoration: none;
+   font-size: 22px;
+   padding: 10px 15px;
+   border-radius: 4px;
+   left: 5px;
+   top: 15px;
+ }
+@media (min-width:992px) {
+   .left-nav {
+     height: 100vh;
+     width:14.66666667%;
+     color:#FFFFFF;
+     background: #34495E;
+     background-image: linear-gradient(206deg, #5F81A3 0%, #34495E 94%);
+     float:left;
+     position: fixed;
+     display:block;
+     transform: translate(0,0);
+     -webkit-transform: translate(0,0); /** Chrome & Safari **/
+     -o-transform: translate(0,0); /** Opera **/
+     -moz-transform: translate(0,0); /** Firefox **/
+   }
+   .left-nav.open {
+     width:14.66666667%;
+     transform: translate(0,0);
+     -webkit-transform: translate(0,0); /** Chrome & Safari **/
+     -o-transform: translate(0,0); /** Opera **/
+     -moz-transform: translate(0,0); /** Firefox **/
+   }
+   .hamburger {
+     display:none;
+   }
+ }
+
  }
  .left-nav .site-logo {
    padding:20px 0;
@@ -416,7 +504,7 @@ p {
  }
  .left-nav .items ul li {
    list-style-type: none;
-   margin-bottom: 15px;
+   padding: 20px;
  }
  .left-nav .items ul li a {
    color:#FFFFFF;
@@ -586,7 +674,7 @@ p {
  }
  .left-nav .items ul li {
    list-style-type: none;
-   margin-bottom: 15px;
+   padding: 15px 20px;
  }
  .left-nav .items ul li a {
    color:#FFFFFF;
@@ -721,8 +809,9 @@ p {
 
  .item-box > img {
    position:absolute;
-   height:100%;
-   width:auto;
+   width:100%;
+	 min-width: 410px;
+	 height:auto;
    top:0;
    left:0;
    right:0;
@@ -756,8 +845,4 @@ p {
 /* Navigation Active Class */
 .active {
   background-color: #000000;
-  background-size: 20px;
-  padding:20px;
-  padding:0.2em 0% ;
-
 }
