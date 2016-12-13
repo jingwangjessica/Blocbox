@@ -149,15 +149,10 @@ p {
  header .hero h1 {
    font-size:34px;
    font-weight: normal;
-   margin:95px 0 0;
+   margin:30px 0 0;
  }
- @media (min-width: 768px){
-   header .hero h1{
-     font-size: 42px;
-   }
-
  header .hero p {
-   font-size: 22px;
+   font-size: 18px;
    line-height: 26px;
    font-weight: 100;
    margin:10px 0 40px;
@@ -168,6 +163,15 @@ p {
 	 width: 100%;
 	 max-width: 1224px;
  }
+ @media (min-width: 768px){
+   header .hero h1{
+     font-size: 42px;
+		 margin-top: 95px;
+   }
+	 header .hero p {
+		 font-size: 22px;
+	 }
+}
 
  /* BUTTONS */
  .btn {
@@ -408,9 +412,8 @@ p {
  }
 
 .dashboard .btn {
-   position: right;
+   position: absolute;
    bottom: 20px;
-   left: 20px;
    right: 20px;
 }
 
@@ -441,7 +444,7 @@ p {
      -o-transform: translate(0,0); /** Opera **/
      -moz-transform: translate(0,0); /** Firefox **/
      z-index: 100;
- }  
+ }
  .hamburger {
    position:absolute;
    z-index: 1000;
@@ -587,55 +590,6 @@ p {
    position: relative;
    overflow: hidden;
    padding:20px;
- }
-
-
- /* Larger Mobile Devices */
- @media (min-width:320px) {
-   .content {
-     padding:1.5em 1%;
-     float:right;
-     width:90%;
-     position: relative;
-   }
-   .content-item {
-     width:46%;
-     margin:0 2% 25px;
-     float:left;
-     display:block;
-   }
- }
-/* Tablets */
- @media (min-width:768px) {
-   .content {
-     padding:1.5em 5%;
-     float:right;
-     width:90%;
-     position: relative;
-   }
-   .content > .container {
-     width:700px;
-   }
-   .content-item {
-     width:31.33333%;
-     margin:0 1% 25px;
-   }
- }
-/* Laptops and Desktops */
- @media (min-width:1024px) {
-   .content {
-     padding:1.5em 1%;
-     float:right;
-     width:83.33333333%;
-     position: relative;
-   }
-   .content > .container {
-     width:auto;
-   }
-   .content-item {
-     width:23%;
-     margin:0 1% 25px;
-   }
  }
 
  /* DASHBOARD */
